@@ -29,9 +29,9 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-endpoints-deps.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-endpoints.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-jsr107cache-1.8.8.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-api.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-api-labs.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-api-stubs.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-testing.jar"/>
+	<classpathentry kind="lib" path="/home/tsa45/git/MyCalendar/MyCalendar/testinglibs/appengine-testing.jar"/>
+	<classpathentry kind="lib" path="/home/tsa45/git/MyCalendar/MyCalendar/testinglibs/appengine-api-labs.jar"/>
+	<classpathentry kind="lib" path="/home/tsa45/git/MyCalendar/MyCalendar/testinglibs/appengine-api-stubs.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>

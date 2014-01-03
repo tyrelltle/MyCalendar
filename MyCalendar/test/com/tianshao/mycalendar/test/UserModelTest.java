@@ -9,7 +9,7 @@ import com.tianshao.mycalendar.model.IModel;
 import com.tianshao.mycalendar.model.User;
 import com.tianshao.mycalendar.test.interfaces.IModelTest;
 
-public class UserModelTest implements IModelTest{
+public class UserModelTest extends IModelTest{
 
 
 

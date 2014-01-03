@@ -19,11 +19,12 @@ import com.tianshao.mycalendar.services.EventService;
 import com.tianshao.mycalendar.servicesImpl.EventServiceImpl;
 import com.tianshao.mycalendar.test.config.WebAppContext;
 import com.tianshao.mycalendar.test.config.WebAppContext_empty_DAO;
+import com.tianshao.mycalendar.test.interfaces.IServiceTest;
 @RunWith(SpringJUnit4ClassRunner.class)
 
 @WebAppConfiguration
 @ContextConfiguration(classes=WebAppContext_empty_DAO.class)
-public class EventServiceTest {
+public class EventServiceTest extends IServiceTest{
 	@Autowired
 	private WebApplicationContext wac;
 	EventService mservice=null;
@@ -36,20 +37,19 @@ public class EventServiceTest {
 	
 	@Test
 	public void testCRUD(){
-		testAddEvent();
-		testGetEvents();
-		testGetEvent();
-		testUpdateEvent();
-		testDelEvent();
+		testAdd();
+		testGetLis();
+		testGet();
+		testUpdate();
+		testDel();
 	}
-	
-	private void testAddEvent() {
+	public void testAdd() {
 		ids[0]= mservice.addEvent(new Event("asd", "asd", "asd"));
 		ids[1]= mservice.addEvent(new Event("asd1", "asd1", "asd1"));
 		ids[2]= mservice.addEvent(new Event("asd2", "asd2", "asd2"));		
 	}
 
-	public void testUpdateEvent(){
+	public void testUpdate(){
 		Event e=new Event("updated","updated","updated");
 		
 		mservice.update(ids[2],e);
@@ -58,7 +58,7 @@ public class EventServiceTest {
 		assertEquals(mservice.getEvent(ids[2]).loc,"updated");
 
 	}
-	public void testGetEvents(){
+	public void testGetLis(){
 		
 		List<Event> es=mservice.getEvents();
 		boolean one=false,two=false,three=false;
@@ -84,7 +84,7 @@ public class EventServiceTest {
 	}
 	
 	
-	public void testGetEvent(){
+	public void testGet(){
 		assertEquals(mservice.getEvent(ids[0]).detail,"asd");
 		assertEquals(mservice.getEvent(ids[1]).detail,"asd1");
 		assertEquals(mservice.getEvent(ids[2]).detail,"asd2");
@@ -93,7 +93,7 @@ public class EventServiceTest {
 	}
 	
 	
-	public void testDelEvent(){
+	public void testDel(){
 		mservice.removeEvent(ids[0]);
 		assertEquals(mservice.getEvent(ids[0]),null);
 
