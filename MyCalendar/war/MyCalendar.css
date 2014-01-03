@@ -1,0 +1,38 @@
+/** Add css rules here for your application. */
+.toplevel{
+	position:absolute;
+	left:30%;
+}
+.leftarea{
+	
+	
+	width: 260px;
+	border:solid 1px #CCCCCC;
+	
+}
+
+.header{
+	
+
+	width: 260px;
+	margin-top:20px;
+	
+}
+
+.content{
+	margin-top:10px;
+}
+.detail {
+		border:solid 1px #CCCCCC;
+	
+
+	
+}
+
+.eventdetail {	
+	position:absolute;
+	top: 55px;
+	left:300px;
+	width:300px;
+	
+}

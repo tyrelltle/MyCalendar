@@ -1,0 +1,77 @@
+<!doctype html>
+<!-- The DOCTYPE declaration above will set the     -->
+<!-- browser's rendering engine into                -->
+<!-- "Standards Mode". Replacing this declaration   -->
+<!-- with a "Quirks Mode" doctype is not supported. -->
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+ 	<link rel="stylesheet" type="text/css" href="themes/semanticui/packaged/css/semantic.css">
+    <link type="text/css" rel="stylesheet" href="MyCalendar.css">
+    <title>Web Application Starter Project</title>
+    	<script type="text/javascript" language="javascript" src="scripts/jquery-1.10.2.js"></script>
+    
+    <script type="text/javascript" language="javascript" src="scripts/underscore.js"></script>
+    <script type="text/javascript" language="javascript" src="scripts/backbone.js"></script>
+  	<script src="themes/semanticui/packaged/javascript/semantic.js"></script>
+
+
+
+  </head>
+
+  <body>
+  <div class=toplevel>
+  		<div class="header"></div>
+  		<div class="content">
+			<div class="leftarea ui animated list segment" ></div>
+			
+			<div class="eventdetail"></div>
+		</div>
+ </div>
+		<script type="text/template" id="newbtntmp">
+			<i class="add icon link green"></i>
+
+				</script>
+	    <script type="text/template" id="listitemtemp">
+			<div class="ui <%=color%> horizontal label"> <%=title%> </div>
+			<%=loc%>
+		</script>
+		<script type="text/template" id="eventdetailtemp">
+			<div class="detail ui form segment">
+				<div class="field">
+					<label> title </label>
+					<div class="ui left labeled icon input">
+						<input type="text" id="title" name = "title" value= "<%=title%>"/> 		
+					</div>
+				</div>
+
+				<div class="field">
+					<label> detail </label>
+					<div class="ui left labeled icon input">
+						<input type="text" id="detail" name = "detail" value= "<%=detail%>"/> 	
+					</div>
+				</div>
+
+				<div class="field">
+					<label> location </label>
+					<div class="ui left labeled icon input">
+						<input type="text" id="loc" name = "loc" value= "<%=loc%>"/> 	
+					</div>
+				</div>
+				<div class="ui buttons">
+  				<div class="save ui positive button">Save</div>
+  				<div class="or"></div>
+  				<div class="del ui button">Delete</div>
+				</div>
+	
+				<label id="status"></label>
+			</div>
+
+
+		</script>
+		
+	    <script type="text/javascript" language="javascript" src="scripts/test.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+ 
+	<!-- 
+		Need DI a message into controller, so auto component scan is disabled, 
+		to avoid double create the movieController bean.
+                Only controller need this hack.
+	-->
+	<context:component-scan base-package="com.tianshao">
+
+	</context:component-scan>
+ 
+<mvc:annotation-driven />
+
+ <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+    <property name="messageConverters">
+        <list>
+            <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>
+        </list>
+    </property>
+</bean>
+<bean
+   class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+	<property name="prefix">
+		<value>/pages/</value>
+	</property>
+	<property name="suffix">
+		<value>.jsp</value>
+	</property>
+</bean>
+<bean id="eventController" class="com.tianshao.mycalendar.ws.EventController" autowire="byName"/>
+
+<bean id="event1" class="com.tianshao.mycalendar.model.Event">
+	<property name="id" value="0"/>
+	<property name="title" value="title1"/>
+	<property name="loc" value="loc1"/>
+	<property name="detail" value="detail1"/>
+</bean>
+
+<bean id="event2" class="com.tianshao.mycalendar.model.Event">
+	<property name="id" value="1"/>
+	<property name="title" value="title2"/>
+	<property name="loc" value="loc2"/>
+	<property name="detail" value="detail2"/>
+</bean>
+
+<bean id="event3" class="com.tianshao.mycalendar.model.Event">
+	<property name="id" value="2"/>
+	<property name="title" value="title3"/>
+	<property name="loc" value="loc3"/>
+	<property name="detail" value="detail3"/>
+</bean>
+
+<bean id="eventService" class="com.tianshao.mycalendar.servicesImpl.EventServiceImpl">
+
+</bean>
+
+
+<bean id="dao" class="com.tianshao.mycalendar.repository.DAOAppEngineImpl">
+
+</bean>
+
+
+
+
+ 
+</beans>

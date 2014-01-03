@@ -1,0 +1,2 @@
+serviceClass: com.tianshao.mycalendar.services.GreetingService
+path: 0053B2B379DC6E7C009F44584344AB24.gwt.rpc
