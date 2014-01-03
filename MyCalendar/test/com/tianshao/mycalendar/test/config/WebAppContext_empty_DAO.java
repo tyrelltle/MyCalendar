@@ -16,7 +16,9 @@ package com.tianshao.mycalendar.test.config;
 import com.tianshao.mycalendar.model.Event;
 import com.tianshao.mycalendar.repository.DAO;
 import com.tianshao.mycalendar.services.EventService;
+import com.tianshao.mycalendar.services.UserService;
 import com.tianshao.mycalendar.servicesImpl.EventServiceImpl;
+import com.tianshao.mycalendar.servicesImpl.UserServiceImpl;
 import com.tianshao.mycalendar.test.mocks.MockDAO;
 import com.tianshao.mycalendar.ws.EventController;
 
@@ -71,7 +73,13 @@ import java.util.Properties;
 
 	        return viewResolver;
 	    }
-	    
+
+	    @Bean
+	    public UserService userService(){
+	    	
+	    	UserService ret=new UserServiceImpl();
+	    	return ret;
+	    }
 	    
 	    @Bean
 	    public EventController eventController(){

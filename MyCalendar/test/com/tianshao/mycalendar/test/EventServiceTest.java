@@ -20,13 +20,9 @@ import com.tianshao.mycalendar.servicesImpl.EventServiceImpl;
 import com.tianshao.mycalendar.test.config.WebAppContext;
 import com.tianshao.mycalendar.test.config.WebAppContext_empty_DAO;
 import com.tianshao.mycalendar.test.interfaces.IServiceTest;
-@RunWith(SpringJUnit4ClassRunner.class)
 
-@WebAppConfiguration
-@ContextConfiguration(classes=WebAppContext_empty_DAO.class)
 public class EventServiceTest extends IServiceTest{
-	@Autowired
-	private WebApplicationContext wac;
+
 	EventService mservice=null;
 	long []ids={0,0,0};
 	@Before
@@ -35,14 +31,7 @@ public class EventServiceTest extends IServiceTest{
 		
 	}
 	
-	@Test
-	public void testCRUD(){
-		testAdd();
-		testGetLis();
-		testGet();
-		testUpdate();
-		testDel();
-	}
+
 	public void testAdd() {
 		ids[0]= mservice.addEvent(new Event("asd", "asd", "asd"));
 		ids[1]= mservice.addEvent(new Event("asd1", "asd1", "asd1"));
